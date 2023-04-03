@@ -1,0 +1,8 @@
+# Files created after installing packages in composer.
+vendor/
+
+# .env contains the credentials of the database.
+.env
+
+# File contains query to create user database.
+sql-data.sql
