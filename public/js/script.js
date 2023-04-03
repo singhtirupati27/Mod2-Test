@@ -19,12 +19,18 @@ function invalidInput(nameId, btnId) {
   document.getElementById(btnId).style.backgroundColor = 'lightgrey';
 }
 
+/**
+ * Function to check whether passed fields are empty or not.
+ */
 function emptyField(msgId, btnId) {
   document.getElementById(msgId).innerHTML = "Field cannot be empty";
   document.getElementById(btnId).disabled = true;
   document.getElementById(btnId).style.backgroundColor = 'lightgrey';
 }
 
+/**
+ * Function to check name contains letters or numbers.
+ */
 function validateName() {
   var pattern = /^[A-Za-z\s]+$/;
 
@@ -42,6 +48,9 @@ function validateName() {
   }
 }
 
+/**
+ * Function to check phone number format.
+ */
 function validatePhone() {
   var pattern = /^(\+91)[0-9]{10}$/;
 
@@ -59,6 +68,9 @@ function validatePhone() {
   }
 }
 
+/**
+ * Function to validate email format
+ */
 function validateEmail() {
   var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})$/;
 
@@ -76,6 +88,9 @@ function validateEmail() {
   }
 }
 
+/**
+ * Function to check password pattern.
+ */
 function validatePassword() {
   var pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
   

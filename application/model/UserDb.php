@@ -74,11 +74,9 @@
 
       // Check how many rows are returned
       if($query->rowCount() == 1) {
-        $this->disconnectDb();
         return TRUE;
       }
       else {
-        $this->disconnectDb();
         return FALSE;
       }
     }
@@ -102,11 +100,9 @@
 
       // Check how many rows are returned
       if($query->rowCount() == 1) {
-        $this->disconnectDb();
         return TRUE;
       }
       else {
-        $this->disconnectDb();
         return FALSE;
       }
     }
@@ -124,7 +120,6 @@
 
       $response = $query->fetchColumn();
 
-      $this->disconnectDb();
       return $response;
     }
 
@@ -138,7 +133,6 @@
 
       $response = $query->fetchColumn();
 
-      $this->disconnectDb();
       return $response;
     }
 
@@ -150,7 +144,6 @@
 
       $response = $query->fetchAll();
 
-      $this->disconnectDb();
       return $response;
     }
 
@@ -186,10 +179,8 @@
           $item_price = $value["item_price"];
           $output .= "<div class='category1-list'>
                         <div class='item-box'>
-                          <div class='select-item'>
-                            <input type='checkbox' name='purchase[]' id='{$item_id}' value='{$item_id}'>
-                          </div>
                           <div class='item-name'>
+                            <input type='checkbox' name='purchase[]' id='{$item_id}' value='{$item_id}'>
                             <h2>Item: {$item_name}</h2>
                           </div>
                           <div class='item-price'>
@@ -233,7 +224,6 @@
         return "No items found.";
       }
 
-      $this->disconnectDb();
       return [$output, $outputs];
     }
 
@@ -269,10 +259,8 @@
           $item_price = $value["item_price"];
           $output .= "<div class='category1-list'>
                         <div class='item-box'>
-                          <div class='select-item'>
-                            <input type='checkbox' name='purchase[]' id='{$item_id}' value='{$item_id}'>
-                          </div>
                           <div class='item-name'>
+                            <input type='checkbox' name='purchase[]' id='{$item_id}' value='{$item_id}'>
                             <h2>Item: {$item_name}</h2>
                           </div>
                           <div class='item-price'>
@@ -316,21 +304,9 @@
         return "No items found.";
       }
 
-      $this->disconnectDb();
       return [$output, $outputs];
     }
 
   }
-
-  require './db_connect.php';
-
-  $data = $database->getCategory1();
-  echo $data[0];
-  echo $data[1];
-  return;
-
-  $response = $database->getCategory2();
-  echo $response[0];
-  echo $response[1];
-  return
+  
 ?>

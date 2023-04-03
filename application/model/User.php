@@ -19,6 +19,12 @@
     public string $phoneErr = "";
     public string $passwordErr = "";
 
+    /**
+     * Function to check whether data is empty or not.
+     * 
+     *  @param $data
+     *    Contains data to check.
+     */
     public function isEmpty($data) {
       if(empty($data)) {
         return TRUE;
@@ -28,6 +34,12 @@
       }
     }
 
+    /**
+     * Function two match two string.
+     * 
+     *  @return bool
+     *    True if pattern match, False if not.
+     */
     public function matchPattern($pattern, $data) {
       if(preg_match($pattern, $data)) {
         return TRUE;
@@ -37,6 +49,12 @@
       }
     }
 
+    /**
+     * Function to check whether data contain letters only.
+     * 
+     *  @param $name
+     *    Contains full name to check.
+     */
     public function validateName($name) {
       $pattern = "/^[a-zA-Z][\s][a-zA-Z]+$/";
 
@@ -69,7 +87,7 @@
         $this->emailErr = "Invalid email format";
       }
       else {
-        $this->verifyEmail($email);
+        // $this->verifyEmail($email);
       }
     }
 
@@ -155,12 +173,7 @@
          */
         $mail->isHTML(true);
         $mail->Subject = 'Reset your password.';
-        $mail->Body = 'Hi,<br><br>Forgot your password?<br>
-        We received a request to reset the password for your account.<br>
-        <br>To reset your password, click on the button below:<br>
-        <a href="http://assignment.com/home/reset" style="color: white;background-color: #008ecf;padding: 10px 15px;display: inline-block;border-radius: 8px;text-decoration: none;">Reset password</a><br><br>
-        Or copy and paste the URL into your browser:<br>
-        <a href="http://assignment.com/home/reset">http://assignment.com/home/reset</a>';
+        $mail->Body = 'Hi, your order has been placed';
         $mail->AltBody = '';
 
         $mail->send();

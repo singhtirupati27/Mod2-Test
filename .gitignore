@@ -5,4 +5,4 @@ vendor/
 .env
 
 # File contains query to create user database.
-sql-data.sql
+query.sql

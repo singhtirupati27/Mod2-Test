@@ -1,7 +1,7 @@
 $(document).ready(function() {
   function loadCat1(page) {
     $.ajax({
-      url: "/UserDb.php",
+      url: "/product/fetchCategory1Item",
       type: "POST",
       data: {page_no :page},
       success: function(data) {
@@ -24,7 +24,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   function loadCat2(page) {
     $.ajax({
-      url: "/UserDb.php",
+      url: "/product/fetchCategory1Item",
       type: "POST",
       data: {page_no :page},
       success: function(data) {
